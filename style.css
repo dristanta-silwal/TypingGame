@@ -1,0 +1,86 @@
+:root{
+    --primary-color: rgb(27, 27, 90);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: palegreen;
+
+}
+
+body, .quote-input{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 700px;
+    max-width: 90%;
+}
+
+.timer{
+    position: absolute;
+    top: 2rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+.t-speed{
+    position: absolute;
+    top: 8rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+
+.quote-display{
+    margin-left: calc(1rem + 2px);
+    margin-right: calc( 1rem + 2px);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.quote-input{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    outline: none;
+    width: 100%;
+    height: 8rem;
+    margin: auto;
+    resize: none;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.quote-input:focus{
+    border-color: white;
+}
+
+.correct{
+    color: green;
+}
+.incorrect{
+    color: red;
+    text-decoration: underline;
+}
+
+.t-history{
+    position: absolute;
+    bottom: 8rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
