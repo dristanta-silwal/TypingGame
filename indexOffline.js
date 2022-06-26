@@ -27,7 +27,7 @@ async function renderNewQuote() {
     });
     quoteInputEL.value = null;
     if(letter){
-        historyEl.innerText = `Your previous speed: ${Math.floor((letter*60) / (5*getTimertime()))} wpm`;
+        historyEl.innerText = `Your previous speed: ${Math.floor((letter*60) / (5*getSpeedtime()))} wpm`;
     }
     startTimer();
     letter = 0;
@@ -35,17 +35,29 @@ async function renderNewQuote() {
 
 let startTime;
 function startTimer() {
-    timerEL.innerText = 0;
+    timerEL.innerText = '00:00';
     speedEl.innerText = '0 wpm';
     startTime = new Date();
     setInterval(() => {
-        speedEl.innerText = `${Math.floor((letter*60) / (5*getTimertime()))} wpm`;
+        speedEl.innerText = `${Math.floor((letter*60) / (5*getSpeedtime()))} wpm`;
         timerEL.innerText = getTimertime();
     }, 1000);
 }
 
-function getTimertime() {
+function getSpeedtime() {
     return Math.floor((new Date() - startTime) /1000)
+}
+
+function getTimertime() {
+    let secs = Math.floor((new Date() - startTime) /1000);
+    let mins = Math.floor(secs / 60) ;
+    secs = secs % 60;
+    // console.log(mins, secs);
+    return `${lessThanTen(mins)}${mins}:${lessThanTen(secs)}${secs}`;
+}
+
+function lessThanTen(value){
+    return (value < 10 ? '0' : '');
 }
 
 renderNewQuote()
