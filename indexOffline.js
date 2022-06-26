@@ -1,6 +1,7 @@
 
 const RANDOM_QUOTE_URL = 'http://api.quotable.io/random';
 
+
 const quoteDisplayEL = document.getElementById('quote-display');
 const quoteInputEL = document.getElementById('quote-input');
 const timerEL = document.getElementById('timer');
@@ -17,13 +18,13 @@ function getRandomQuote() {
 
 async function renderNewQuote() {
     const quote = await getRandomQuote();
-    // console.log(quote)
+    // console.log(quote);
     quoteDisplayEL.innerText = '';
     quote.split('').forEach(character => {
         const characterSpan = document.createElement('span');
         characterSpan.innerText = character;
         quoteDisplayEL.appendChild(characterSpan);
-    });;
+    });
     quoteInputEL.value = null;
     if(letter){
         historyEl.innerText = `Your previous speed: ${Math.floor((letter*60) / (5*getTimertime()))} wpm`;
