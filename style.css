@@ -1,9 +1,11 @@
 :root{
     --primary-color: rgb(27, 27, 90);
+    --primary-font: Arial, monospace, sans-serif;
 }
 
 *{
     box-sizing: border-box;
+    font-family: var(--primary-font);
 }
 
 body{
@@ -19,7 +21,7 @@ body{
 }
 
 body, .quote-input{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--primary-font);
 }
 
 .container{
