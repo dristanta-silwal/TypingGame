@@ -6,5 +6,4 @@ indexOnline.js is used for online hosting of website as api used in indexOffline
 
 You can clone this repo and toggle indexOffline.js to run Typing Game with more quotes generated online.
 
-
 Happy Coding!
